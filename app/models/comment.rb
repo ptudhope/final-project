@@ -17,4 +17,9 @@ class Comment < ApplicationRecord
     def author
         return User.where({ :id => self.user_id})
     end
+
+    def restaurant_associated
+        return Restaurant.where({ :id => self.user_id})
+    end
+    
 end

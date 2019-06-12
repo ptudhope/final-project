@@ -19,9 +19,10 @@ class RestaurantsController < ApplicationController
 
   def save_new_info
     @restaurant = Restaurant.new
-
+    
+    @restaurant.name = params.fetch("name")
     @restaurant.address = params.fetch("address")
-    @restaurant.cuisine = params.fetch("cuisine")
+    @restaurant.cuisine = params.fetch("cuisine") 
 
     if @restaurant.valid?
       @restaurant.save
@@ -30,6 +31,7 @@ class RestaurantsController < ApplicationController
     else
       render("restaurant_templates/blank_form.html.erb")
     end
+    
   end
 
   def prefilled_form

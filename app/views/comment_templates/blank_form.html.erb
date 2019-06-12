@@ -6,30 +6,19 @@
 
 <%= render("comment_templates/validation_failures.html.erb") %>
 
-<form action="/insert_comment_record" method="post">
-  <div>
-    <label for="caption">
-      Caption
-    </label>
+<form action="/save_new_info">
+  <label for="caption_box">Comment</label>
+  <textarea id="caption_box" name="restaurant_caption" placeholder="Tell us what you thought about the restaurant..."></textarea>
 
-    <input type="text" id="caption" name="caption" value="<%= @comment.caption %>">
-  </div>
+  <input type="hidden" name="user_id" value="<%= @comment.user_id %>">
 
-  <div>
-    <label for="user_id">
-      User
-    </label>
-
-    <input type="text" id="user_id" name="user_id" value="<%= @comment.user_id %>">
-  </div>
-
-  <div>
-    <label for="restaurant_id">
+  <div class="form-group">
+    <label for="comment">
       Restaurant
     </label>
 
-    <input type="text" id="restaurant_id" name="restaurant_id" value="<%= @comment.restaurant_id %>">
-  </div>
+    <%= select_tag(:comment, options_from_collection_for_select(Restaurant.all, :id, :name, Restaurant.name), :class => "form-control", :required => true) %>
+  </div> 
 
   <button>
     Create comment

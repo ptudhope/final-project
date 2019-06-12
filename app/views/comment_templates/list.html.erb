@@ -10,9 +10,6 @@
 
 <table>
   <tr>
-    <th>
-      ID
-    </th>
 
     <th>
       Caption
@@ -40,20 +37,17 @@
 
   <% @comments.each do |comment| %>
   <tr>
-    <td>
-      <%= comment.id %>
-    </td>
 
     <td>
       <%= comment.caption %>
     </td>
 
     <td>
-      <%= comment.user_id %>
+      <%= comment.author %>
     </td>
 
     <td>
-      <%= comment.restaurant_id %>
+      <%= comment.restaurant_associated %>
     </td>
 
     <td>

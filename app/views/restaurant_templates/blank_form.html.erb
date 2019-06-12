@@ -7,6 +7,14 @@
 <%= render("restaurant_templates/validation_failures.html.erb") %>
 
 <form action="/insert_restaurant_record" method="post">
+    <div>
+    <label for="name">
+      Name
+    </label>
+
+    <input type="text" id="name" name="name" value="<%= @restaurant.name %>">
+  </div>
+  
   <div>
     <label for="address">
       Address
@@ -16,16 +24,26 @@
   </div>
 
   <div>
-    <label for="cuisine">
+    <label for="cuisine_select">
       Cuisine
     </label>
-
-    <input type="text" id="cuisine" name="cuisine" value="<%= @restaurant.cuisine %>">
+    
+    <select name="cuisine" id="cuisine_select">
+      <option value="Italian">Italian</option>
+      <option value="Mexican">Mexican</option>
+      <option value="American">American</option>
+      <!--Portia, just go on from here-->
+    </select>
+  </div>  
+  
+  <p></p>
+  
+  <div>
+    <button>
+      Create restaurant
+    </button>    
   </div>
 
-  <button>
-    Create restaurant
-  </button>
 </form>
 
 <hr>
