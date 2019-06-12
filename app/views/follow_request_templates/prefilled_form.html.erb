@@ -1,0 +1,43 @@
+<h1>
+  Edit follow request #<%= @follow_request.id %>
+</h1>
+
+<hr>
+
+<%= render("follow_request_templates/validation_failures.html.erb") %>
+
+<form action="/update_follow_request_record/<%= @follow_request.id %>" method="post">
+  <div>
+    <label for="status">
+      Status
+    </label>
+
+    <input type="text" id="status" name="status" value="<%= @follow_request.status %>">
+  </div>
+
+  <div>
+    <label for="recipient_id">
+      Recipient
+    </label>
+
+    <input type="text" id="recipient_id" name="recipient_id" value="<%= @follow_request.recipient_id %>">
+  </div>
+
+  <div>
+    <label for="sender_id">
+      Sender
+    </label>
+
+    <input type="text" id="sender_id" name="sender_id" value="<%= @follow_request.sender_id %>">
+  </div>
+
+  <button>
+    Update follow request
+  </button>
+</form>
+
+<hr>
+
+<a href="/follow_requests">
+  Go back
+</a>

@@ -1,0 +1,35 @@
+<h1>
+  Edit restaurant #<%= @restaurant.id %>
+</h1>
+
+<hr>
+
+<%= render("restaurant_templates/validation_failures.html.erb") %>
+
+<form action="/update_restaurant_record/<%= @restaurant.id %>" method="post">
+  <div>
+    <label for="address">
+      Address
+    </label>
+
+    <input type="text" id="address" name="address" value="<%= @restaurant.address %>">
+  </div>
+
+  <div>
+    <label for="cuisine">
+      Cuisine
+    </label>
+
+    <input type="text" id="cuisine" name="cuisine" value="<%= @restaurant.cuisine %>">
+  </div>
+
+  <button>
+    Update restaurant
+  </button>
+</form>
+
+<hr>
+
+<a href="/restaurants">
+  Go back
+</a>

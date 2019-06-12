@@ -1,0 +1,35 @@
+<h1>
+  Edit like #<%= @like.id %>
+</h1>
+
+<hr>
+
+<%= render("like_templates/validation_failures.html.erb") %>
+
+<form action="/update_like_record/<%= @like.id %>" method="post">
+  <div>
+    <label for="user_id">
+      User
+    </label>
+
+    <input type="text" id="user_id" name="user_id" value="<%= @like.user_id %>">
+  </div>
+
+  <div>
+    <label for="restaurant_id">
+      Restaurant
+    </label>
+
+    <input type="text" id="restaurant_id" name="restaurant_id" value="<%= @like.restaurant_id %>">
+  </div>
+
+  <button>
+    Update like
+  </button>
+</form>
+
+<hr>
+
+<a href="/likes">
+  Go back
+</a>

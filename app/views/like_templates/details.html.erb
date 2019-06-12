@@ -1,0 +1,54 @@
+<h1>
+  Like #<%= @like.id %> details
+</h1>
+
+<div>
+  <div>
+    <a href="/likes">
+      Go back
+    </a>
+  </div>
+
+  <div>
+    <a href="/existing_like_form/<%= @like.id %>">
+      Edit like
+    </a>
+  </div>
+
+  <div>
+    <a href="/delete_like/<%= @like.id %>">
+      Delete like
+    </a>
+  </div>
+</div>
+
+<dl>
+  <dt>
+    User
+  </dt>
+  <dd>
+    <%= @like.user_id %>
+  </dd>
+
+  <dt>
+    Restaurant
+  </dt>
+  <dd>
+    <%= @like.restaurant_id %>
+  </dd>
+
+  <dt>
+    Created at
+  </dt>
+  <dd>
+    <%= time_ago_in_words(@like.created_at) %> ago
+  </dd>
+
+  <dt>
+    Updated at
+  </dt>
+  <dd>
+    <%= time_ago_in_words(@like.updated_at) %> ago
+  </dd>
+</dl>
+
