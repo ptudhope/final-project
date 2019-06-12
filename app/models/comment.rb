@@ -13,4 +13,8 @@
 class Comment < ApplicationRecord
     belongs_to :user
     belongs_to :restaurant
+    
+    def author
+        return User.where({ :id => self.user_id})
+    end
 end

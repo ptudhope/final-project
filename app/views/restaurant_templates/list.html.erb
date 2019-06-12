@@ -11,7 +11,7 @@
 <table>
   <tr>
     <th>
-      ID
+      Name
     </th>
 
     <th>
@@ -23,11 +23,11 @@
     </th>
 
     <th>
-      Created at
+      Likes
     </th>
 
     <th>
-      Updated at
+      Comments
     </th>
 
     <th>
@@ -37,7 +37,7 @@
   <% @restaurants.each do |restaurant| %>
   <tr>
     <td>
-      <%= restaurant.id %>
+      <%= restaurant.name %>
     </td>
 
     <td>
@@ -49,11 +49,11 @@
     </td>
 
     <td>
-      <%= time_ago_in_words(restaurant.created_at) %> ago
+      <%= restaurant.likes.count %> likes
     </td>
 
     <td>
-      <%= time_ago_in_words(restaurant.updated_at) %> ago
+      <%= restaurant.comments.count %> comments
     </td>
 
     <td>
